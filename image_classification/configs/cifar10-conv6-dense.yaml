@@ -1,0 +1,31 @@
+# experiment setting
+gpu_ids: [0] 
+omp_num_threads: 16
+save_dir: results
+seed: 0
+
+# training/inference setting
+optimizer_name: sgd
+lr: 0.1
+momentum: 0.9
+weight_decay: 0.0001
+scheduler_name: cosine_lr
+milestones: [50, 75]
+gamma: 0.1
+batch_size_per_gpu: 128
+max_epoch: 100
+eval_interval: 1
+save_interval: 50
+
+# model setting
+model_name: conv6
+nonlinearity: relu
+use_affine_bn: False
+algo: dense
+w_init_method: kaiming_uniform
+
+# dataset setting
+dataset_name: cifar10
+dataset_dir:  datasets
+train_val_ratio: 0.8
+n_worker: 4
